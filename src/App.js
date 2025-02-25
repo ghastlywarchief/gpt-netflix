@@ -21,19 +21,19 @@ function App() {
 
 export const AppRouter = createBrowserRouter([
   {
-    path:"/",
+    path:"/gpt-netflix/",
     element: <App />,
     children: [
       {
-        path:"/",
+        path:"/gpt-netflix/",
         element: <Body/>
       },
       {
-        path:"/login",
+        path:"/gpt-netflix/login",
         element: <Login />
       },
       {
-        path: "/browse",
+        path: "/gpt-netflix/browse",
         element: <Browse/>
       },
     ]

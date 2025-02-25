@@ -22,11 +22,11 @@ const Header = () => {
             const {uid, displayName, email } = user;
             dispatch(addUser({uid : uid, email: email, name: displayName}));
             setIsUserLoggedIn(true);
-            navigate("/browse");
+            navigate("/gpt-netflix/browse");
           }
           else{
             dispatch(removeUser());
-            navigate("/");
+            navigate("/gpt-netflix/");
             setIsUserLoggedIn(false);
           }
       });
@@ -53,10 +53,10 @@ const Header = () => {
             <div>
                 {(!isUserLoggedIn) ? <Link to="/"><img src={LOGO_URL} alt="" className="w-1/4 bg-transparent" /></Link> : <Link to="/browse"><img src={LOGO_URL} alt="" className="w-1/4 bg-transparent" /></Link>}
             </div>
-            { (location.pathname !== "/login") && <div className="p-2 m-2 flex justify-around">
+            { (location.pathname !== "/gpt-netflix/login") && <div className="p-2 m-2 flex justify-around">
                 <HeaderLanguageAccordion />
                 {(isUserLoggedIn) && <button className="bg-red-700 text-white rounded-md p-2 m-2 font-bold w-28 h-12" onClick={handleAISearchClick}>{ aiSearchClicked ? "Homepage" : "AI Search"}</button>}
-                <Link to="/login"><button className="bg-red-700 text-white rounded-md p-2 m-2 font-bold w-28 h-12" onClick={handleClick}>{(!isUserLoggedIn) ? "Sign In" : "Sign Out"}</button></Link>
+                <Link to="/gpt-netflix/login"><button className="bg-red-700 text-white rounded-md p-2 m-2 font-bold w-28 h-12" onClick={handleClick}>{(!isUserLoggedIn) ? "Sign In" : "Sign Out"}</button></Link>
             </div>}
         </div>
     )
